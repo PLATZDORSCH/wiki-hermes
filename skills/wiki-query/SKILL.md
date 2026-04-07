@@ -42,9 +42,11 @@ Beantworte eine Frage auf Basis des kompilierten Wiki-Wissens.
    status: active
    ---
    ```
+   Die Seite braucht einen "Verwandte Seiten"-Abschnitt mit mindestens 2 bidirektionalen Links.
 
-5. **Index und Log aktualisieren** — Falls eine neue Seite erstellt wurde:
+5. ⛔ **Index, Overview und Log aktualisieren** — Falls eine neue Seite erstellt wurde:
    - `wiki/index.md` → neuen Eintrag unter Synthesis
+   - `wiki/overview.md` → falls die Analyse neue Erkenntnisse enthält
    - `wiki/log.md` → Eintrag mit `query | Fragetitel`
 
 ## Pitfalls
@@ -52,8 +54,14 @@ Beantworte eine Frage auf Basis des kompilierten Wiki-Wissens.
 - Immer zuerst den Index lesen, nie direkt raten
 - Wenn das Wiki keine ausreichende Antwort hergibt: offen sagen und Quellenlücken benennen
 - Triviale Fragen müssen nicht als Synthesis-Seite gespeichert werden
+- Falls gespeichert: Index, Overview und Log NIEMALS vergessen
 
 ## Verification
 
-- Antwort basiert auf tatsächlichen Wiki-Seiten, nicht auf Allgemeinwissen
-- Falls gespeichert: neue Seite in `wiki/synthesis/` mit korrektem Frontmatter
+⛔ BEVOR du den Workflow als abgeschlossen meldest:
+
+1. Antwort basiert auf tatsächlichen Wiki-Seiten, nicht auf Allgemeinwissen
+2. Falls gespeichert: neue Seite hat korrektes Frontmatter UND "Verwandte Seiten"-Abschnitt
+3. Falls gespeichert: `wiki/index.md` enthält die neue Seite
+4. Falls gespeichert: `wiki/log.md` hat einen Eintrag
+5. Erst dann dem User Abschluss melden.

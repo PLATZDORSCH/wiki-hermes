@@ -9,6 +9,34 @@ status: draft
 
 # Branchenübersicht
 
-> Diese Seite wird automatisch aktualisiert, sobald Quellen ingestet werden. Sie fasst das Gesamtbild der Branche zusammen — die wichtigsten Themen, Trends, Akteure und Entwicklungen.
+> Letzte Aktualisierung: 2026-04-06 | Basiert auf 0 Quellen
 
-*Noch keine Quellen verarbeitet. Starte mit dem Ingest einer ersten Quelle, um die Übersicht aufzubauen.*
+## Kernthemen
+
+*Noch keine Quellen verarbeitet.*
+
+## Aktuelle Trends
+
+| Trend | Momentum | Relevanz | Seit |
+|---|---|---|---|
+
+## Wichtigste Akteure
+
+*Noch keine Akteure erfasst.*
+
+## Regulatorisches Umfeld
+
+*Noch keine regulatorischen Themen erfasst.*
+
+## Marktüberblick
+
+*Noch keine Marktdaten erfasst.*
+
+## Offene Fragen
+
+*Was wissen wir noch nicht? Wo fehlen Quellen?*
+
+## Verwandte Seiten
+
+- [Index](index.md)
+- [Log](log.md)

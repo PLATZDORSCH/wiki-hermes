@@ -4,6 +4,41 @@ Ein LLM-gepflegtes Branchen-Wiki nach dem [LLM Wiki Pattern](https://gist.github
 
 ---
 
+## KRITISCHE REGELN
+
+> ⛔ Diese Regeln gelten IMMER. Kein Workflow ist abgeschlossen ohne sie zu befolgen.
+
+### Pflicht-Updates nach JEDER Wiki-Operation
+
+Jede Operation die Wiki-Seiten erstellt oder aktualisiert MUSS mit diesen drei Schritten ENDEN:
+
+1. **`wiki/index.md` aktualisieren** — Alle neuen/geänderten Seiten eintragen. Lies den Index, prüfe ob alles drin steht.
+2. **`wiki/overview.md` aktualisieren** — Branchenübersicht anpassen. Neue Themen, Trends, Player einarbeiten.
+3. **`wiki/log.md` ergänzen** — Eintrag am Ende anfügen mit Datum, Operation und betroffenen Seiten.
+
+Ein Ingest, Query oder Draft ohne diese drei Updates ist **UNVOLLSTÄNDIG**. Beende niemals einen Workflow ohne diese Dateien geprüft und aktualisiert zu haben.
+
+### Verlinkung — bidirektional und pflichtmäßig
+
+Jede Wiki-Seite MUSS am Ende einen Abschnitt haben:
+
+```markdown
+## Verwandte Seiten
+- [Seitentitel](../kategorie/dateiname.md)
+- [Seitentitel](../kategorie/dateiname.md)
+```
+
+Regeln:
+- **Mindestens 2 Verlinkungen** pro Seite
+- **Bidirektional** — wenn Seite A auf Seite B verlinkt, MUSS Seite B auch auf Seite A verlinken
+- Bei neuen Seiten: bestehende thematisch passende Seiten finden UND dort einen Rückverweis setzen
+- Relative Markdown-Links verwenden: `[Titel](../kategorie/dateiname.md)`
+- Bei Widersprüchen zwischen Seiten: `> ⚠️ Widerspruch: ...` markieren
+
+Diese Verlinkungen sind entscheidend für die Obsidian Graph View — sie machen die Wissensstruktur sichtbar.
+
+---
+
 ## Architektur
 
 ```
@@ -104,9 +139,7 @@ player_type: company      # company|person|association|research|partner
 
 ### Verlinkung
 
-- Relative Markdown-Links: `[Künstliche Intelligenz](../topics/kuenstliche-intelligenz.md)`
-- Jede Seite sollte mindestens einen eingehenden und einen ausgehenden Link haben
-- Bei Widersprüchen zwischen Seiten: explizit markieren mit `> ⚠️ Widerspruch: ...`
+Siehe KRITISCHE REGELN oben. Jede Seite braucht einen "Verwandte Seiten"-Abschnitt mit mindestens 2 bidirektionalen Links.
 
 ### Sprache
 
@@ -138,7 +171,7 @@ Schritte:
    ---
    ```
 5. Dateiname: `YYYY-MM-DD-kurztitel.md`
-6. User fragen ob direkt ingestet werden soll
+6. Direkt Ingest-Workflow ausführen (Schritte 1–9 unten). Nur überspringen wenn der User explizit ablehnt.
 
 ### 1. Ingest — Neue Quelle verarbeiten
 
@@ -154,10 +187,11 @@ Schritte:
    - Neue Informationen einarbeiten
    - Widersprüche zu bestehenden Aussagen markieren
    - Neue Querverweise setzen
-6. Bei Bedarf neue Seiten anlegen in `wiki/topics/`, `wiki/trends/`, `wiki/players/` etc.
-7. `wiki/index.md` aktualisieren — neue Seiten eintragen
-8. `wiki/overview.md` bei wesentlichen neuen Erkenntnissen aktualisieren
-9. Eintrag in `wiki/log.md` schreiben
+   - "Verwandte Seiten"-Abschnitte in bestehenden Seiten ergänzen (bidirektional!)
+6. Bei Bedarf neue Seiten anlegen in `wiki/topics/`, `wiki/trends/`, `wiki/players/` etc. Jede neue Seite braucht einen "Verwandte Seiten"-Abschnitt.
+7. ⛔ `wiki/index.md` aktualisieren — ALLE neuen Seiten eintragen. Index lesen und prüfen.
+8. ⛔ `wiki/overview.md` aktualisieren — Branchenübersicht an neue Erkenntnisse anpassen. IMMER, nicht optional.
+9. ⛔ Eintrag in `wiki/log.md` schreiben (append)
 
 Hinweis: Eine einzelne Quelle kann 5–15 Wiki-Seiten betreffen.
 

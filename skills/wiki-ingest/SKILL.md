@@ -50,18 +50,20 @@ Verarbeite eine neue Quelle und integriere das Wissen ins Wiki.
 
 6. **Neue Seiten anlegen** — Falls die Quelle Themen, Trends, Player oder Konzepte enthält die noch keine eigene Seite haben, neue Seiten erstellen in den passenden Unterordnern. Frontmatter-Konventionen aus `AGENTS.md` beachten.
 
-7. **Index aktualisieren** — Alle neuen Seiten in `wiki/index.md` eintragen. Format: `- [Titel](pfad) — Kurzbeschreibung (X Quellen)`
+7. **Verwandte Seiten verlinken** — Jede neue/aktualisierte Seite braucht einen "Verwandte Seiten"-Abschnitt am Ende mit mindestens 2 Links. Verlinkungen sind bidirektional — wenn A auf B verlinkt, MUSS B auch auf A verlinken. In bestehenden Seiten Rückverweise ergänzen.
 
-8. **Overview prüfen** — Falls die Quelle wesentliche neue Erkenntnisse enthält, `wiki/overview.md` aktualisieren.
+8. ⛔ **Index aktualisieren** — `wiki/index.md` LESEN und PRÜFEN. Alle neuen Seiten eintragen. Format: `- [Titel](pfad) — Kurzbeschreibung (X Quellen)`
 
-9. **Log schreiben** — Eintrag in `wiki/log.md` (append):
-   ```markdown
-   ## [YYYY-MM-DD] ingest | Titel der Quelle
-   - Quelle: raw/articles/dateiname.md
-   - Erstellt: wiki/sources/..., wiki/topics/...
-   - Aktualisiert: wiki/trends/..., wiki/players/...
-   - Zusammenfassung: Kernaussage in einem Satz.
-   ```
+9. ⛔ **Overview aktualisieren** — `wiki/overview.md` LESEN und AKTUALISIEREN. Neue Themen, Trends, Akteure, Marktdaten einarbeiten. Quellenzähler hochsetzen. NICHT OPTIONAL.
+
+10. ⛔ **Log schreiben** — Eintrag in `wiki/log.md` ANFÜGEN (append-only):
+    ```markdown
+    ## [YYYY-MM-DD] ingest | Titel der Quelle
+    - Quelle: raw/articles/dateiname.md
+    - Erstellt: wiki/sources/..., wiki/topics/...
+    - Aktualisiert: wiki/trends/..., wiki/players/...
+    - Zusammenfassung: Kernaussage der Quelle in einem Satz.
+    ```
 
 ## Pitfalls
 
@@ -69,10 +71,15 @@ Verarbeite eine neue Quelle und integriere das Wissen ins Wiki.
 - Dateinamen: lowercase, Bindestriche, keine Umlaute (ä→ae, ö→oe, ü→ue, ß→ss)
 - Wiki-Inhalte auf Deutsch, Frontmatter-Keys auf Englisch
 - Eine Quelle kann 5–15 Wiki-Seiten betreffen — lieber zu viele Seiten aktualisieren als zu wenige
+- Schritte 8–10 (Index, Overview, Log) NIEMALS überspringen
 
 ## Verification
 
-- Neue Source-Seite existiert in `wiki/sources/`
-- `wiki/index.md` enthält alle neuen Seiten
-- `wiki/log.md` hat einen neuen Eintrag
-- Alle neuen Seiten haben korrektes YAML-Frontmatter
+⛔ BEVOR du den Workflow als abgeschlossen meldest, prüfe JEDEN dieser Punkte:
+
+1. Lies `wiki/index.md` — sind ALLE neuen Seiten eingetragen? Falls nein: JETZT nachtragen.
+2. Lies `wiki/overview.md` — spiegelt sie die neuen Erkenntnisse wider? Falls nein: JETZT aktualisieren.
+3. Lies `wiki/log.md` — gibt es einen Eintrag für diesen Ingest? Falls nein: JETZT schreiben.
+4. Haben alle neuen/aktualisierten Seiten einen "Verwandte Seiten"-Abschnitt mit mindestens 2 bidirektionalen Links?
+5. Haben alle neuen Seiten korrektes YAML-Frontmatter?
+6. Erst dann dem User Abschluss melden.

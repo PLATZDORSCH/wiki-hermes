@@ -42,7 +42,7 @@ Erstelle einen Wochenrückblick aus den letzten Wiki-Aktivitäten.
      ---
      ```
 
-5. **Log schreiben** — Eintrag in `wiki/log.md`:
+5. ⛔ **Log schreiben** — Eintrag in `wiki/log.md`:
    ```markdown
    ## [YYYY-MM-DD] newsletter | Wochenrückblick KW XX
    - Zeitraum: YYYY-MM-DD bis YYYY-MM-DD
@@ -56,9 +56,13 @@ Erstelle einen Wochenrückblick aus den letzten Wiki-Aktivitäten.
 - Nur Fakten aus dem Wiki verwenden, nichts erfinden
 - Falls keine Aktivitäten in der Woche: kurze Meldung statt leeren Newsletter
 - Immer Einordnung liefern, nicht nur auflisten
+- Log-Eintrag NIEMALS vergessen
 
 ## Verification
 
-- Newsletter-Entwurf existiert in `content/drafts/`
-- Alle referenzierten Daten stammen aus tatsächlichen Wiki-Seiten
-- Log-Eintrag wurde geschrieben
+⛔ BEVOR du den Workflow als abgeschlossen meldest:
+
+1. Newsletter-Entwurf existiert in `content/drafts/`
+2. Alle referenzierten Daten stammen aus tatsächlichen Wiki-Seiten
+3. `wiki/log.md` hat einen Newsletter-Eintrag
+4. Erst dann dem User Abschluss melden.

@@ -49,12 +49,9 @@ Scrape eine URL, konvertiere den Inhalt zu Markdown und speichere ihn als Quelle
      ```
    - Danach der konvertierte Markdown-Inhalt
 
-5. **User informieren** — Kurze Bestätigung:
-   - Titel und Dateiname
-   - Geschätzte Länge (Wörter)
-   - Fragen ob sofort ingestet werden soll
+5. **User kurz informieren** — Titel, Dateiname und geschätzte Länge (Wörter) bestätigen.
 
-6. **Optional: Ingest anstoßen** — Falls der User zustimmt, direkt den wiki-ingest Skill ausführen mit der neuen Datei.
+6. ⛔ **Ingest ausführen** — Direkt den vollständigen wiki-ingest Workflow ausführen (Schritte 1–10 aus wiki-ingest). Der Ingest ist der DEFAULT — nur überspringen wenn der User explizit sagt, dass er nicht ingestieren will. Scrape ohne Ingest ist ein halber Job.
 
 ## Pitfalls
 
@@ -63,10 +60,14 @@ Scrape eine URL, konvertiere den Inhalt zu Markdown und speichere ihn als Quelle
 - PDFs nicht über diesen Skill verarbeiten — dafür direkt in `raw/pdfs/` ablegen
 - Cookie-Consent-Banner, Werbung und Navigation sauber entfernen
 - Bei Scraping-Fehlern den User informieren und alternative Vorgehensweisen vorschlagen (z.B. manuell kopieren nach `raw/notes/`)
+- ⛔ NIEMALS den Ingest-Schritt vergessen — Scrape ohne Ingest lässt die Quelle unverarbeitet in raw/ liegen
 
 ## Verification
 
-- Markdown-Datei existiert in `raw/articles/`
-- Datei hat korrektes Frontmatter mit URL und Datum
-- Inhalt ist sauberes Markdown ohne HTML-Artefakte
-- Dateiname folgt der Konvention `YYYY-MM-DD-kurztitel.md`
+⛔ BEVOR du den Workflow als abgeschlossen meldest, prüfe JEDEN dieser Punkte:
+
+1. Markdown-Datei existiert in `raw/articles/` mit korrektem Frontmatter
+2. Inhalt ist sauberes Markdown ohne HTML-Artefakte
+3. Dateiname folgt der Konvention `YYYY-MM-DD-kurztitel.md`
+4. Falls Ingest ausgeführt: ALLE Ingest-Verification-Punkte prüfen (index.md, overview.md, log.md, Verlinkungen)
+5. Erst dann dem User Abschluss melden.

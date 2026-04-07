@@ -44,7 +44,7 @@ Erstelle einen Content-Entwurf auf Basis des Wiki-Wissens.
 
 5. **User informieren** — Entwurf dem User zeigen, auf Stellen hinweisen die Review brauchen.
 
-6. **Log schreiben** — Eintrag in `wiki/log.md`:
+6. ⛔ **Log schreiben** — Eintrag in `wiki/log.md`:
    ```markdown
    ## [YYYY-MM-DD] draft | Titel des Contents
    - Format: blog
@@ -58,9 +58,13 @@ Erstelle einen Content-Entwurf auf Basis des Wiki-Wissens.
 - Immer das Wiki als Basis nutzen, nicht frei erfinden
 - Quellenverweise einbauen wo möglich
 - Tonalität an die Zielgruppe anpassen
+- Log-Eintrag NIEMALS vergessen
 
 ## Verification
 
-- Entwurf existiert in `content/drafts/`
-- Entwurf hat korrektes Frontmatter mit `based_on`-Verweisen
-- Log-Eintrag wurde geschrieben
+⛔ BEVOR du den Workflow als abgeschlossen meldest:
+
+1. Entwurf existiert in `content/drafts/`
+2. Entwurf hat korrektes Frontmatter mit `based_on`-Verweisen
+3. `wiki/log.md` hat einen Draft-Eintrag
+4. Erst dann dem User Abschluss melden.
