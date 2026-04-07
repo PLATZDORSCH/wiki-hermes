@@ -118,6 +118,28 @@ player_type: company      # company|person|association|research|partner
 
 ## Workflows
 
+### 0. Scrape — Web-Quelle abrufen
+
+Auslöser: User teilt eine URL oder sagt "scrape das", "lies diesen Artikel".
+
+Schritte:
+
+1. URL fetchen und HTML zu sauberem Markdown konvertieren
+2. Boilerplate entfernen (Navigation, Footer, Ads, Cookie-Banner)
+3. Metadaten extrahieren (Titel, Autor, Datum)
+4. Als Markdown in `raw/articles/` speichern mit Frontmatter:
+   ```yaml
+   ---
+   title: "Originaltitel"
+   url: "https://example.com/artikel"
+   author: "Name"
+   published: YYYY-MM-DD
+   scraped: YYYY-MM-DD
+   ---
+   ```
+5. Dateiname: `YYYY-MM-DD-kurztitel.md`
+6. User fragen ob direkt ingestet werden soll
+
 ### 1. Ingest — Neue Quelle verarbeiten
 
 Auslöser: Neue Datei in `raw/` oder User gibt URL/Text zum Verarbeiten.

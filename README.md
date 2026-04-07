@@ -11,7 +11,9 @@ You curate sources and ask questions. The agent does the rest.
 ## How it works
 
 ```
-raw/          Drop sources (articles, PDFs, notes)
+URL / file    Share a link or drop a file
+                 ↓ Scrape
+raw/          Clean markdown sources
                  ↓ Ingest
 wiki/         Agent builds structured wiki
                  ↓ Draft
@@ -30,6 +32,7 @@ content/      Derive publishable content
 
 | Workflow | What happens |
 |---|---|
+| **Scrape** | Grab a URL → convert to clean markdown, save to `raw/articles/` with metadata |
 | **Ingest** | Process new source → create summary, update wiki pages, set cross-references |
 | **Query** | Ask the wiki → answer from compiled knowledge, not raw data |
 | **Lint** | Health check → find contradictions, orphan pages, missing links |
@@ -54,9 +57,9 @@ wiki/
 
 ## Quickstart
 
-1. **Add a source** — Drop an article, PDF or note into `raw/`
+1. **Add a source** — Drop a file into `raw/`, or share a URL with the agent
 2. **Start an agent** — Open the project with an LLM agent ([Hermes](https://github.com/NousResearch/hermes-agent), Cursor, Claude Code, etc.)
-3. **Run ingest** — Tell the agent: *"Process the new source in raw/articles/..."*
+3. **Scrape & ingest** — Tell the agent: *"Scrape this URL and ingest it"* or *"Process the new source in raw/articles/..."*
 4. **Wiki grows** — The agent reads `AGENTS.md`, follows the workflows and builds the wiki
 
 No code needed. `AGENTS.md` contains all rules and workflows — the agent is the runtime.

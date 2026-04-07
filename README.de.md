@@ -11,7 +11,9 @@ Der Mensch kuratiert Quellen und stellt Fragen. Der Agent erledigt den Rest.
 ## Wie es funktioniert
 
 ```
-raw/          Quellen ablegen (Artikel, PDFs, Notizen)
+URL / Datei   Link teilen oder Datei ablegen
+                 ↓ Scrape
+raw/          Saubere Markdown-Quellen
                  ↓ Ingest
 wiki/         Agent baut strukturiertes Wiki auf
                  ↓ Draft
@@ -30,6 +32,7 @@ content/      Content für Veröffentlichung ableiten
 
 | Workflow | Was passiert |
 |---|---|
+| **Scrape** | URL abrufen → zu sauberem Markdown konvertieren, in `raw/articles/` mit Metadaten speichern |
 | **Ingest** | Neue Quelle verarbeiten → Summary erstellen, Wiki-Seiten aktualisieren, Querverweise setzen |
 | **Query** | Frage ans Wiki stellen → Antwort aus kompiliertem Wissen, nicht aus Rohdaten |
 | **Lint** | Gesundheitscheck → Widersprüche, verwaiste Seiten, fehlende Verknüpfungen finden |
@@ -54,9 +57,9 @@ wiki/
 
 ## Quickstart
 
-1. **Quelle ablegen** — Kopiere einen Artikel, ein PDF oder eine Notiz nach `raw/`
+1. **Quelle hinzufügen** — Lege eine Datei in `raw/` ab, oder teile dem Agent eine URL
 2. **Agent starten** — Öffne das Projekt mit einem LLM-Agenten ([Hermes](https://github.com/NousResearch/hermes-agent), Cursor, Claude Code, etc.)
-3. **Ingest anstoßen** — Sag dem Agent: *"Verarbeite die neue Quelle in raw/articles/..."*
+3. **Scrape & Ingest** — Sag dem Agent: *"Scrape diese URL und ingest sie"* oder *"Verarbeite die neue Quelle in raw/articles/..."*
 4. **Wiki wächst** — Der Agent liest `AGENTS.md`, folgt den Workflows und baut das Wiki auf
 
 Kein Code nötig. Das `AGENTS.md` enthält alle Regeln und Workflows — der Agent ist die Runtime.
