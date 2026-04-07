@@ -50,7 +50,7 @@ Verarbeite eine neue Quelle und integriere das Wissen ins Wiki.
 
 6. **Neue Seiten anlegen** — Falls die Quelle Themen, Trends, Player oder Konzepte enthält die noch keine eigene Seite haben, neue Seiten erstellen in den passenden Unterordnern. Frontmatter-Konventionen aus `AGENTS.md` beachten.
 
-7. **Verwandte Seiten verlinken** — Jede neue/aktualisierte Seite braucht einen "Verwandte Seiten"-Abschnitt am Ende mit mindestens 2 Links. Verlinkungen sind bidirektional — wenn A auf B verlinkt, MUSS B auch auf A verlinken. In bestehenden Seiten Rückverweise ergänzen.
+7. **Verwandte Seiten verlinken** — Jede neue/aktualisierte Seite braucht einen "Verwandte Seiten"-Abschnitt am Ende. Links MÜSSEN kategorieübergreifend sein (siehe Pflicht-Verlinkungstabelle in AGENTS.md): Sources verlinken auf Topics/Trends/Players, Topics verlinken zurück auf Sources und auf verwandte Trends/Players, usw. Verlinkungen sind bidirektional — wenn A auf B verlinkt, MUSS B auch auf A verlinken. In bestehenden Seiten Rückverweise ergänzen.
 
 8. ⛔ **Index aktualisieren** — `wiki/index.md` LESEN und PRÜFEN. Alle neuen Seiten eintragen. Format: `- [Titel](pfad) — Kurzbeschreibung (X Quellen)`
 
@@ -80,6 +80,6 @@ Verarbeite eine neue Quelle und integriere das Wissen ins Wiki.
 1. Lies `wiki/index.md` — sind ALLE neuen Seiten eingetragen? Falls nein: JETZT nachtragen.
 2. Lies `wiki/overview.md` — spiegelt sie die neuen Erkenntnisse wider? Falls nein: JETZT aktualisieren.
 3. Lies `wiki/log.md` — gibt es einen Eintrag für diesen Ingest? Falls nein: JETZT schreiben.
-4. Haben alle neuen/aktualisierten Seiten einen "Verwandte Seiten"-Abschnitt mit mindestens 2 bidirektionalen Links?
+4. Haben alle neuen/aktualisierten Seiten einen "Verwandte Seiten"-Abschnitt mit kategorieübergreifenden, bidirektionalen Links? (Sources → Topics/Trends/Players, Topics → Sources/Trends/Players, usw.)
 5. Haben alle neuen Seiten korrektes YAML-Frontmatter?
 6. Erst dann dem User Abschluss melden.

@@ -18,7 +18,11 @@ Jede Operation die Wiki-Seiten erstellt oder aktualisiert MUSS mit diesen drei S
 
 Ein Ingest, Query oder Draft ohne diese drei Updates ist **UNVOLLSTÄNDIG**. Beende niemals einen Workflow ohne diese Dateien geprüft und aktualisiert zu haben.
 
-### Verlinkung — bidirektional und pflichtmäßig
+### Verlinkung — kategorieübergreifend, bidirektional und pflichtmäßig
+
+Die Verlinkungen zwischen Wiki-Seiten sind das Herzstück des Wikis. Sie machen die Wissensstruktur in Obsidian Graph View sichtbar. Ohne Verlinkungen ist das Wiki nur eine Sammlung loser Dateien.
+
+**WICHTIG:** Nur echte Markdown-Links im Seiteninhalt erzeugen Kanten im Graphen. Das `sources`-Feld im YAML-Frontmatter ist für den Graphen UNSICHTBAR.
 
 Jede Wiki-Seite MUSS am Ende einen Abschnitt haben:
 
@@ -30,12 +34,44 @@ Jede Wiki-Seite MUSS am Ende einen Abschnitt haben:
 
 Regeln:
 - **Mindestens 2 Verlinkungen** pro Seite
+- **Kategorieübergreifend** — Links MÜSSEN über Ordnergrenzen hinweg gehen (siehe Tabelle unten)
 - **Bidirektional** — wenn Seite A auf Seite B verlinkt, MUSS Seite B auch auf Seite A verlinken
 - Bei neuen Seiten: bestehende thematisch passende Seiten finden UND dort einen Rückverweis setzen
 - Relative Markdown-Links verwenden: `[Titel](../kategorie/dateiname.md)`
 - Bei Widersprüchen zwischen Seiten: `> ⚠️ Widerspruch: ...` markieren
 
-Diese Verlinkungen sind entscheidend für die Obsidian Graph View — sie machen die Wissensstruktur sichtbar.
+### Pflicht-Verlinkungen nach Seitentyp
+
+| Seitentyp | MUSS verlinken auf |
+|---|---|
+| `sources/` | Alle Topics, Trends, Players und Regulation-Seiten die aus dieser Quelle entstanden oder aktualisiert wurden |
+| `topics/` | Relevante Sources, verwandte Trends, beteiligte Players, betroffene Regulation |
+| `trends/` | Relevante Sources, verwandte Topics, beteiligte Players, betroffene Regulation |
+| `players/` | Relevante Sources, zugehörige Topics, relevante Trends |
+| `regulation/` | Relevante Sources, betroffene Topics, beteiligte Players |
+| `market/` | Relevante Sources, verwandte Topics, relevante Trends, relevante Players |
+| `synthesis/` | Alle Wiki-Seiten auf denen die Analyse basiert |
+
+Beispiel einer gut verlinkten Topic-Seite:
+
+```markdown
+## Verwandte Seiten
+
+### Quellen
+- [McKinsey Report 2026](../sources/2026-04-06-mckinsey-report.md)
+- [Heise-Artikel KI-Agenten](../sources/2026-04-05-heise-ki-agenten.md)
+
+### Trends
+- [KI-Agenten](../trends/ki-agenten.md)
+- [Prozessautomatisierung](../trends/prozessautomatisierung.md)
+
+### Akteure
+- [Microsoft](../players/microsoft.md)
+- [Fraunhofer IAO](../players/fraunhofer-iao.md)
+
+### Regulierung
+- [EU AI Act](../regulation/eu-ai-act.md)
+```
 
 ---
 
@@ -139,7 +175,7 @@ player_type: company      # company|person|association|research|partner
 
 ### Verlinkung
 
-Siehe KRITISCHE REGELN oben. Jede Seite braucht einen "Verwandte Seiten"-Abschnitt mit mindestens 2 bidirektionalen Links.
+Siehe KRITISCHE REGELN oben. Jede Seite braucht einen "Verwandte Seiten"-Abschnitt mit kategorieübergreifenden, bidirektionalen Links. Die Pflicht-Verlinkungstabelle definiert welche Seitentypen aufeinander verweisen MÜSSEN.
 
 ### Sprache
 
