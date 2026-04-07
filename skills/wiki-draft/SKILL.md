@@ -1,21 +1,26 @@
+---
+name: wiki-draft
+description: Erstelle einen Content-Entwurf (Blog, Newsletter, Briefing) auf Basis des Wiki-Wissens.
+version: 1.0.0
+metadata:
+  hermes:
+    tags: [wiki, content, writing]
+    category: wiki
+    requires_toolsets: [terminal]
+---
+
 # wiki-draft
 
 Erstelle einen Content-Entwurf auf Basis des Wiki-Wissens.
 
-## Wann nutzen
+## When to Use
 
 - User will einen Blogartikel, ein Briefing oder LinkedIn-Post schreiben
 - User sagt "schreib mir einen Artikel über...", "erstelle ein Briefing zu..." o.ä.
 
-## Eingabe
+## Procedure
 
-- Thema
-- Format: blog, newsletter, briefing, linkedin, slides
-- Optional: Zielgruppe, Tonalität, Länge
-
-## Schritte
-
-1. **Thema und Format klären** — Falls nicht eindeutig, kurz nachfragen.
+1. **Thema und Format klären** — Falls nicht eindeutig, kurz nachfragen. Mögliche Formate: blog, newsletter, briefing, linkedin, slides.
 
 2. **Wiki durchsuchen** — `wiki/index.md` lesen, relevante Seiten identifizieren und lesen. Besonders `wiki/synthesis/` und `wiki/trends/` prüfen.
 
@@ -47,9 +52,15 @@ Erstelle einen Content-Entwurf auf Basis des Wiki-Wissens.
    - Gespeichert: content/drafts/YYYY-MM-DD-kurztitel.md
    ```
 
-## Regeln
+## Pitfalls
 
 - Entwürfe immer in `content/drafts/`, nie direkt in `content/published/`
 - Immer das Wiki als Basis nutzen, nicht frei erfinden
 - Quellenverweise einbauen wo möglich
 - Tonalität an die Zielgruppe anpassen
+
+## Verification
+
+- Entwurf existiert in `content/drafts/`
+- Entwurf hat korrektes Frontmatter mit `based_on`-Verweisen
+- Log-Eintrag wurde geschrieben

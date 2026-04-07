@@ -1,20 +1,25 @@
+---
+name: wiki-ingest
+description: Verarbeite eine neue Quelle und integriere das Wissen ins Wiki.
+version: 1.0.0
+metadata:
+  hermes:
+    tags: [wiki, knowledge, ingest]
+    category: wiki
+    requires_toolsets: [terminal]
+---
+
 # wiki-ingest
 
 Verarbeite eine neue Quelle und integriere das Wissen ins Wiki.
 
-## Wann nutzen
+## When to Use
 
 - Neue Datei wurde in `raw/` abgelegt
 - User gibt eine URL oder Text zum Verarbeiten
 - User sagt "ingest", "verarbeite", "lies das" o.ä.
 
-## Eingabe
-
-- Pfad zu einer Datei in `raw/` ODER
-- URL zum Scrapen ODER
-- Text direkt vom User
-
-## Schritte
+## Procedure
 
 1. **Quelle lesen** — Datei lesen, URL scrapen oder Text übernehmen. Bei PDFs: Text extrahieren.
 
@@ -58,9 +63,16 @@ Verarbeite eine neue Quelle und integriere das Wissen ins Wiki.
    - Zusammenfassung: Kernaussage in einem Satz.
    ```
 
-## Regeln
+## Pitfalls
 
 - Dateien in `raw/` NIEMALS verändern
 - Dateinamen: lowercase, Bindestriche, keine Umlaute (ä→ae, ö→oe, ü→ue, ß→ss)
 - Wiki-Inhalte auf Deutsch, Frontmatter-Keys auf Englisch
 - Eine Quelle kann 5–15 Wiki-Seiten betreffen — lieber zu viele Seiten aktualisieren als zu wenige
+
+## Verification
+
+- Neue Source-Seite existiert in `wiki/sources/`
+- `wiki/index.md` enthält alle neuen Seiten
+- `wiki/log.md` hat einen neuen Eintrag
+- Alle neuen Seiten haben korrektes YAML-Frontmatter

@@ -1,14 +1,25 @@
+---
+name: wiki-newsletter
+description: Erstelle einen Wochenrückblick aus den letzten Wiki-Aktivitäten.
+version: 1.0.0
+metadata:
+  hermes:
+    tags: [wiki, content, newsletter]
+    category: wiki
+    requires_toolsets: [terminal]
+---
+
 # wiki-newsletter
 
 Erstelle einen Wochenrückblick aus den letzten Wiki-Aktivitäten.
 
-## Wann nutzen
+## When to Use
 
 - User fordert Newsletter oder Wochenrückblick an
 - Wöchentlich via Cron
 - User sagt "was ist diese Woche passiert", "Wochenupdate" o.ä.
 
-## Schritte
+## Procedure
 
 1. **Log scannen** — `wiki/log.md` lesen und alle Einträge der letzten 7 Tage identifizieren.
 
@@ -40,8 +51,14 @@ Erstelle einen Wochenrückblick aus den letzten Wiki-Aktivitäten.
    - Gespeichert: content/drafts/YYYY-MM-DD-newsletter-kwXX.md
    ```
 
-## Regeln
+## Pitfalls
 
 - Nur Fakten aus dem Wiki verwenden, nichts erfinden
 - Falls keine Aktivitäten in der Woche: kurze Meldung statt leeren Newsletter
 - Immer Einordnung liefern, nicht nur auflisten
+
+## Verification
+
+- Newsletter-Entwurf existiert in `content/drafts/`
+- Alle referenzierten Daten stammen aus tatsächlichen Wiki-Seiten
+- Log-Eintrag wurde geschrieben

@@ -1,14 +1,25 @@
+---
+name: wiki-lint
+description: Führe einen Gesundheitscheck des Wikis durch.
+version: 1.0.0
+metadata:
+  hermes:
+    tags: [wiki, knowledge, maintenance]
+    category: wiki
+    requires_toolsets: [terminal]
+---
+
 # wiki-lint
 
 Führe einen Gesundheitscheck des Wikis durch.
 
-## Wann nutzen
+## When to Use
 
 - User fordert Lint, Health-Check oder Qualitätsprüfung an
 - Periodisch via Cron (z.B. wöchentlich)
 - Nach einer größeren Ingest-Serie
 
-## Schritte
+## Procedure
 
 1. **Alle Wiki-Seiten lesen** — `wiki/index.md` und dann alle referenzierten Seiten durchgehen.
 
@@ -45,7 +56,13 @@ Führe einen Gesundheitscheck des Wikis durch.
    - Welche neuen Seiten angelegt werden sollten
    - Welche Quellen gesucht werden sollten um Lücken zu schließen
 
-## Regeln
+## Pitfalls
 
 - Keine Änderungen ohne Rücksprache — nur Bericht und Vorschläge
 - Bei Widersprüchen: beide Positionen darstellen, nicht eigenmächtig eine wählen
+
+## Verification
+
+- Alle Wiki-Seiten wurden geprüft
+- Bericht wurde dem User präsentiert
+- Log-Eintrag wurde geschrieben
