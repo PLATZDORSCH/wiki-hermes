@@ -92,4 +92,4 @@ Basiert auf dem [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e989
 
 ## Lizenz
 
-[Apache 2.0](LICENSE)
+[MIT](LICENSE)
